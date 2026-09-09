@@ -3,7 +3,7 @@
 	<header class='site-header'>
 		<div class='wrap header-inner'>
 			<a href='/' class='logo'>Adham</a>
-			<button class='icon-btn' id='view-toggle' aria-label='Toggle view'>
+			{{! <button class='icon-btn' id='view-toggle' aria-label='Toggle view'>
 				<svg
 					width='18'
 					height='18'
@@ -18,7 +18,7 @@
 					<line x1='8' y1='21' x2='16' y2='21' />
 					<line x1='12' y1='17' x2='12' y2='21' />
 				</svg>
-			</button>
+			</button> For dark/light theme. Should be fixed! }}
 		</div>
 	</header>
 
@@ -142,7 +142,9 @@
 		<!-- ===== CONTENT CARD ===== -->
 		<section class='panel'>
 			<div class='panel-head'>
-				<img src='images/avatar.jpg' alt='Alex Rivera' class='panel-avatar' />
+				<div>
+					<img src='images/avatar.jpg' alt='Alex Rivera' class='panel-avatar' />
+				</div>
 				<h2 class='panel-title'>Who Am I?</h2>
 			</div>
 
@@ -201,30 +203,27 @@
 
 			<div class='panel-copy'>
 				<p>
-					I'm the developer who turns ideas into web experiences people enjoy
-					using. My mission is to build applications that look great, load fast,
-					and work for everyone.
+					I am a backend developer who enjoys building reliable and practical
+					web applications. I’m interested in how things work behind the
+					scenes—from designing APIs and working with databases to building
+					server-side applications.
 				</p>
 				<p>
-					I'm a 26 year old CS grad, and since starting my programming journey
-					in 2019, my curiosity has pushed me to dive deep into full-stack
-					development, with a strong focus on accessibility, performance, and
-					clean architecture.
+					I'm a 23 year old, and since starting my programming journey in 2021,
+					my curiosity has pushed me to dive deep into full-stack development,
+					with a strong focus on accessibility, performance, and clean
+					architecture.
 				</p>
 				<p>
-					At Northline Labs, I worked as a frontend developer, contributing from
-					day one and rebuilding the company's marketing site, which lifted
-					signups by 45%.
-				</p>
-				<p>
-					Beyond code, I enjoy climbing, vinyl records, and mentoring new
-					developers. I'm currently open to full-time roles and select freelance
-					projects.
+					On the frontend, I work with HTML, CSS, and JavaScript, and I enjoy
+					creating clean and responsive interfaces. I’m continuously learning,
+					improving my skills, and working on projects that help me turn ideas
+					into real, functional web applications.
 				</p>
 			</div>
 
 			<div class='panel-actions'>
-				<a href='resume-placeholder.pdf' class='btn'>
+				<a href='/documents/AX - CV.pdf' target='_blank' class='btn'>
 					Get my Resume
 					<svg
 						width='16'
@@ -260,6 +259,10 @@
 			</div>
 		</section>
 
+	</div>
+	<div class='image-popup' id='imagePopup'>
+		<span class='close'>&times;</span>
+		<img src='/images/avatar.jpg' alt='Avatar' />
 	</div>
 </main>
 

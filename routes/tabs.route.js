@@ -10,4 +10,12 @@ router.get('/experience', (req, res) => {
   res.render('experience');
 });
 
+router.get('/projects', (req, res) => {
+  res.render('projects');
+});
+
+router.get('/education', (req, res) => {
+  res.render('education');
+});
+
 module.exports = router;
