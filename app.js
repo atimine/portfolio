@@ -1,14 +1,15 @@
 require('dotenv').config();
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const { connection } = require('./config/db');
 
-var indexRouter = require('./routes/index');
-var tabsRouter = require('./routes/tabs.route');
+const indexRouter = require('./routes/index');
+const tabsRouter = require('./routes/tabs.route');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,6 +20,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', (req, res, next) => {
+  connection.query(
+    'SELECT * FROM contact',
+    (err, results) => {
+      if (err) {
+        return next(err);
+      }
+      
+      req.result = results[0];
+      next();
+    }
+  );
+});
 
 app.use('/', indexRouter);
 app.use('/tabs', tabsRouter);

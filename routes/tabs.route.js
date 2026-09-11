@@ -3,8 +3,7 @@ var router = express.Router();
 
 /* GET tabs listing. */
 router.get('/skills', (req, res) => {
-  res.locals.title = 'Technical Skills'
-  res.render('skills',);
+  res.render('skills', {title: 'Technical Skills'});
 });
 
 router.get('/experience', (req, res) => {
@@ -20,7 +19,7 @@ router.get('/education', (req, res) => {
 });
 
 router.get('/contact', (req, res) => {
-  res.render('contact', {title: 'Contact With Me'});
+  res.render('contact', {title: 'Contact With Me', result: req.result});
 });
 
 module.exports = router;

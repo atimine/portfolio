@@ -181,6 +181,7 @@
 								id='first-name'
 								name='firstName'
 								placeholder='Your First Name'
+								value='{{result.firstname}}'
 								required
 							/>
 						</div>
@@ -191,6 +192,7 @@
 								id='last-name'
 								name='lastName'
 								placeholder='Your Last Name'
+								value='{{result.lastname}}'
 							/>
 						</div>
 					</div>
@@ -202,6 +204,7 @@
 							id='email'
 							name='email'
 							placeholder='your@email.com'
+							value='{{result.email}}'
 							required
 						/>
 					</div>
@@ -215,7 +218,7 @@
 							rows='5'
 							placeholder='Write your message&hellip;'
 							required
-						></textarea>
+						>{{result.message}}</textarea>
 					</div>
 
 					<div class='form-submit'>
