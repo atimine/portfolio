@@ -19,18 +19,21 @@ router.get('/education', (req, res) => {
   res.render('education', {title: 'Academic Path'});
 });
 
-router.get('/contact', (req, res) => {
+router.get('/contact', (req, res, next) => {
   connection.query(
     'SELECT * FROM contact',
     (err, results) => {
       if (err) {
+        console.error('MYSQL ERROR:', err);
         return next(err);
       }
 
-      res.render('contact', {title: 'Contact With Me', result: results[0]});
+      res.render('contact', {
+        title: 'Contact With Me',
+        result: results[0]
+      });
     }
   );
-
 });
 
 module.exports = router;
