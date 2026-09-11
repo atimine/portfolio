@@ -28,12 +28,42 @@ router.get('/contact', (req, res, next) => {
         return next(err);
       }
 
-      res.render('contact', {
-        title: 'Contact With Me',
-        result: results[0]
-      });
+      res.render('contact', {title: 'Contact With Me'});
     }
   );
 });
+
+/* POST tabs listing. */
+
+router.post('/contact', (req, res, next) => {
+  const {firstname, lastname, email, message} = req.body
+
+  if (!firstname?.trim() || !lastname?.trim() || !email?.trim() || !message?.trim()) {
+    return res.status(400).render('contact', {title: 'Contact With Me', formError: 'Please fill the form correctly'});
+  }
+
+  connection.query(
+    `INSERT INTO contact (firstname, lastname, email, message) VALUES (?, ?, ?, ?)`,
+    [
+      firstname.trim(),
+      lastname.trim(),
+      email.trim(),
+      message.trim()
+    ],
+    (err, result) => {
+      if (err) {
+        return next(err);
+      }
+
+      console.log(result);
+
+      res.status(201).render('contact', {
+        title: 'Contact With Me',
+        formMessage: 'Message sent successfully.'
+      });
+    }
+  );
+})
+
 
 module.exports = router;

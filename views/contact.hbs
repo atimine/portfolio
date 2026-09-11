@@ -171,7 +171,7 @@
 						Let&rsquo;s Connect &#10022; Let&rsquo;s Connect &#10022;</span>
 				</div>
 
-				<form class='contact-form'>
+				<form class='contact-form' action='/tabs/contact' method='post'>
 					<div class='form-row'>
 						<div class='form-field'>
 							<label for='first-name'>First name
@@ -179,9 +179,8 @@
 							<input
 								type='text'
 								id='first-name'
-								name='firstName'
+								name='firstname'
 								placeholder='Your First Name'
-								value='{{result.firstname}}'
 								required
 							/>
 						</div>
@@ -190,9 +189,9 @@
 							<input
 								type='text'
 								id='last-name'
-								name='lastName'
+								name='lastname'
 								placeholder='Your Last Name'
-								value='{{result.lastname}}'
+								required
 							/>
 						</div>
 					</div>
@@ -204,7 +203,6 @@
 							id='email'
 							name='email'
 							placeholder='your@email.com'
-							value='{{result.email}}'
 							required
 						/>
 					</div>
@@ -218,7 +216,7 @@
 							rows='5'
 							placeholder='Write your message&hellip;'
 							required
-						>{{result.message}}</textarea>
+						></textarea>
 					</div>
 
 					<div class='form-submit'>
