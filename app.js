@@ -20,19 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', (req, res, next) => {
-  connection.query(
-    'SELECT * FROM contact',
-    (err, results) => {
-      if (err) {
-        return next(err);
-      }
-      
-      req.result = results[0];
-      next();
-    }
-  );
-});
 
 app.use('/', indexRouter);
 app.use('/tabs', tabsRouter);

@@ -1,4 +1,5 @@
 var express = require('express');
+const { connection } = require('../config/db');
 var router = express.Router();
 
 /* GET tabs listing. */
@@ -19,7 +20,17 @@ router.get('/education', (req, res) => {
 });
 
 router.get('/contact', (req, res) => {
-  res.render('contact', {title: 'Contact With Me', result: req.result});
+  connection.query(
+    'SELECT * FROM contact',
+    (err, results) => {
+      if (err) {
+        return next(err);
+      }
+
+      res.render('contact', {title: 'Contact With Me', result: results[0]});
+    }
+  );
+
 });
 
 module.exports = router;
