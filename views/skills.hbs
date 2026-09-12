@@ -68,7 +68,7 @@
 					<polyline points='16 18 22 12 16 6' />
 					<polyline points='8 6 2 12 8 18' />
 				</svg>
-				<span>My Superpowers</span>
+				<span>Technical Skills</span>
 			</a>
 			<a href='/tabs/experience' class='side-link'>
 				<svg
@@ -143,13 +143,13 @@
 		<section class='panel'>
 			<div class='panel-head'>
 				<div class='panel-icon-box'>JS</div>
-				<h2 class='panel-title'>My SuperPowers</h2>
+				<h2 class='panel-title'>Technical Skills</h2>
 			</div>
 
 			<p class='panel-intro'>
-				Every creator has their toolkit, but I like to think of mine as
-				superpowers. From weaving clean UIs to powering up backends, these are
-				the skills that help me turn ideas into experiences.
+				The tools and technologies behind the work. From frontend interfaces to
+				backend systems, these are the skills I use to build, solve problems,
+				and turn ideas into working software.
 			</p>
 
 			<!-- Highlight cards -->
@@ -208,129 +208,47 @@
 				</div>
 			</div>
 
-			<!-- Frontend -->
+			<!-- Web Development -->
 			<div class='skill-group'>
 				<h3 class='skill-group-title'>Crafting Stunning Interfaces</h3>
 				<div class='skill-tags'>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/html5/e34f26'
-							alt=''
-						/>
-						HTML</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/css/1572b6'
-							alt=''
-						/>
-						CSS</span>
-					{{! <span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/javascript/f7df1e'
-							alt=''
-						/>
-						Javascript</span> }}
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/typescript/3178c6'
-							alt=''
-						/>
-						Typescript</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/react/61dafb'
-							alt=''
-						/>
-						React.js</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/nextdotjs/ffffff'
-							alt=''
-						/>
-						Next.js</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/tailwindcss/38bdf8'
-							alt=''
-						/>
-						Tailwind CSS</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/framer/ff3399'
-							alt=''
-						/>
-						Framer Motion</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/redux/764abc'
-							alt=''
-						/>
-						Redux</span>
+					{{#each webSkills}}
+						<span class='skill-tag'>
+							<img src='{{iconUrl}}' alt='{{skillName}}' />{{skillName}}</span>
+					{{/each}}
 				</div>
 			</div>
 
-			<!-- Backend -->
+			<!-- Backend Development -->
 			<div class='skill-group'>
-				<h3 class='skill-group-title'>Building Robust Backends</h3>
+				<h3 class='skill-group-title'>Backend Development</h3>
 				<div class='skill-tags'>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/nodedotjs/339933'
-							alt=''
-						/>
-						Node.js</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/express/ffffff'
-							alt=''
-						/>
-						Express</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/mongodb/47a248'
-							alt=''
-						/>
-						MongoDB</span>
+					{{#each backendSkills}}
+						<span class='skill-tag'>
+							<img src='{{iconUrl}}' alt='{{skillName}}' />{{skillName}}</span>
+					{{/each}}
 				</div>
 			</div>
 
-			<!-- Tooling -->
-			<div class='skill-group skill-group-last'>
-				<h3 class='skill-group-title'>Modern Tooling</h3>
+			<!-- Databases & Data -->
+			<div class='skill-group skill-group'>
+				<h3 class='skill-group-title'>Databases & Data</h3>
 				<div class='skill-tags'>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/git/f05032'
-							alt=''
-						/>
-						Git</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/github/ffffff'
-							alt=''
-						/>
-						Github</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/stripe/635bff'
-							alt=''
-						/>
-						Stripe</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/shopify/95bf47'
-							alt=''
-						/>
-						Shopify</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/figma/f24e1e'
-							alt=''
-						/>
-						Figma</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/postman/ff6c37'
-							alt=''
-						/>
-						Postman</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/mailtrap/34c5b4'
-							alt=''
-						/>
-						Mailtrap</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/vercel/ffffff'
-							alt=''
-						/>
-						Vercel</span>
-					<span class='skill-tag'><img
-							src='https://cdn.simpleicons.org/render/46e3b7'
-							alt=''
-						/>
-						Render</span>
+					{{#each databaseSkills}}
+						<span class='skill-tag'>
+							<img src='{{iconUrl}}' alt='{{skillName}}' />{{skillName}}</span>
+					{{/each}}
+				</div>
+			</div>
+
+			<!-- Other Tools -->
+			<div class='skill-group skill-group-last'>
+				<h3 class='skill-group-title'>Other Tooling</h3>
+				<div class='skill-tags'>
+					{{#each otherSkills}}
+						<span class='skill-tag'>
+							<img src='{{iconUrl}}' alt='{{skillName}}' />{{skillName}}</span>
+					{{/each}}
 				</div>
 			</div>
 		</section>

@@ -3,24 +3,25 @@ const rotateEl = document.getElementById("hero-rotate");
 const words = ["Node.js", "Express.js", "Javascript", "MySQL", "MongoDB"];
 let i = 0;
 
-
 const avatar = document.querySelector(".panel-avatar");
 const popup = document.getElementById("imagePopup");
 const close = document.querySelector(".close");
 
-avatar.addEventListener("click", () => {
-  popup.style.display = "flex";
-});
-
-close.addEventListener("click", () => {
-  popup.style.display = "none";
-});
-
-popup.addEventListener("click", (e) => {
-  if (e.target === popup) {
+if (avatar && popup && close) {
+  avatar.addEventListener("click", () => {
+    popup.style.display = "flex";
+  });
+  
+  close.addEventListener("click", () => {
     popup.style.display = "none";
-  }
-});
+  });
+  
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+}
 
 if (rotateEl) {
   setInterval(() => {
@@ -60,13 +61,13 @@ document.querySelectorAll(".exp-header").forEach((header) => {
   });
 });
 
-// Open whichever item already has is-open in the HTML on page load
+// // Open whichever item already has is-open in the HTML on page load
 document.querySelectorAll(".exp-item.is-open").forEach(openItem);
 
 const projectsData = {
   "be-commerce": {
     title: "BE Commerce",
-    image: "images/project-be-commerce.svg",
+    image: "/images/project-be-commerce.svg",
     tagline: "A full-stack eCommerce platform with payments, product management, and reviews.",
     bullets: [
       "BE-Commerce started as my attempt to build a complete online shopping experience from scratch. I wanted users to browse, review, and actually make purchases in real time with Stripe.",

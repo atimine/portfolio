@@ -1,10 +1,37 @@
-var express = require('express');
+const router = require('express').Router();
 const { connection } = require('../config/db');
-var router = express.Router();
 
 /* GET tabs listing. */
 router.get('/skills', (req, res) => {
-  res.render('skills', {title: 'Technical Skills'});
+
+  const data = {
+    title: 'Technical Skills',
+    webSkills: [
+     {iconUrl: 'https://cdn.simpleicons.org/html5/e34f26', skillName: 'HTML'},
+     {iconUrl: 'https://cdn.simpleicons.org/css/1572b6', skillName: 'CSS'},
+     {iconUrl: 'https://cdn.simpleicons.org/javascript/f7df1e', skillName: 'JavaScript'},
+     {iconUrl: 'https://cdn.simpleicons.org/handlebarsdotjs/000000', skillName: 'HBS'},
+    ],
+    backendSkills: [
+     {iconUrl: 'https://cdn.simpleicons.org/nodedotjs/339933', skillName: 'Node.js'},
+     {iconUrl: 'https://cdn.simpleicons.org/express/ffffff', skillName: 'Express'}
+    ],
+    databaseSkills: [
+     {iconUrl: 'https://cdn.simpleicons.org/mongodb/47A248', skillName: 'MongoDB'},
+     {iconUrl: 'https://cdn.simpleicons.org/mysql/4479A1', skillName: 'MySQL'},
+     {iconUrl: 'https://cdn.simpleicons.org/mongoose/880000', skillName: 'Mangoose'}
+    ],
+    otherSkills: [
+     {iconUrl: 'https://cdn.simpleicons.org/git/f05032', skillName: 'Git'},
+     {iconUrl: 'https://cdn.simpleicons.org/github/ffffff', skillName: 'Github'},
+     {iconUrl: 'https://cdn.simpleicons.org/postman/ff6c37', skillName: 'Postman'},
+     {iconUrl: 'https://cdn.simpleicons.org/vercel/ffffff', skillName: 'Vercel'},
+     {iconUrl: 'https://cdn.simpleicons.org/alwaysdata/E9568E', skillName: 'Alwaysdata'},
+     {iconUrl: 'https://cdn.simpleicons.org/ubuntu/E95420', skillName: 'Ubuntu'}
+    ]
+  }
+
+  res.render('skills', data);
 });
 
 router.get('/experience', (req, res) => {
@@ -20,17 +47,7 @@ router.get('/education', (req, res) => {
 });
 
 router.get('/contact', (req, res, next) => {
-  connection.query(
-    'SELECT * FROM contact',
-    (err, results) => {
-      if (err) {
-        console.error('MYSQL ERROR:', err);
-        return next(err);
-      }
-
-      res.render('contact', {title: 'Contact With Me'});
-    }
-  );
+  res.render('contact', {title: 'Contact With Me'});
 });
 
 /* POST tabs listing. */

@@ -68,7 +68,7 @@
 					<polyline points='16 18 22 12 16 6' />
 					<polyline points='8 6 2 12 8 18' />
 				</svg>
-				<span>My Superpowers</span>
+				<span>Technical Skills</span>
 			</a>
 			<a href='/tabs/experience' class='side-link'>
 				<svg
@@ -143,7 +143,11 @@
 		<section class='panel'>
 			<div class='panel-head'>
 				<div>
-					<img src='images/avatar.jpg' alt='Alex Rivera' class='panel-avatar' />
+					<img
+						src='{{avatarUrl}}'
+						alt='Adham Khudayberganov'
+						class='panel-avatar'
+					/>
 				</div>
 				<h2 class='panel-title'>Who Am I?</h2>
 			</div>
@@ -181,7 +185,7 @@
 						<line x1='8' y1='2' x2='8' y2='6' />
 						<line x1='3' y1='10' x2='21' y2='10' />
 					</svg>
-					3+ Years of Experience
+					{{numberOfExperince}}+ Years of Experience
 				</span>
 				<span class='badge badge-amber'>
 					<svg
@@ -197,7 +201,7 @@
 						<path d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z' />
 						<circle cx='12' cy='10' r='3' />
 					</svg>
-					Urgench, Uzbekistan
+					{{currentLocation}}
 				</span>
 			</div>
 
@@ -223,7 +227,7 @@
 			</div>
 
 			<div class='panel-actions'>
-				<a href='/documents/AX - CV.pdf' target='_blank' class='btn'>
+				<a href='/documents/{{cvUrl}}' target='_blank' class='btn'>
 					Get my Resume
 					<svg
 						width='16'
